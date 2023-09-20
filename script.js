@@ -28,6 +28,15 @@ class Animal {
       Environment: this.environment,
     });
   }
+  statDecrease() {
+    this.health -= 2;
+    this.happiness -= 2;
+    this.hunger -= 2;
+    this.thirst -= 2;
+    this.environment -= 2;
+    this.stats();
+    setInterval(statDecrease, 1000);
+  }
 }
 
 class Dinosaur extends Animal {
@@ -110,3 +119,16 @@ class Unicorn extends Animal {
     this.environment += 10;
   }
 }
+
+const dino = new Dinosaur("Dino");
+
+const statDecrease = () => {
+  this.health -= 2;
+  this.happiness -= 2;
+  this.hunger -= 2;
+  this.thirst -= 2;
+  this.environment -= 2;
+  dino.stats();
+};
+
+setInterval(statDecrease, 1000);
