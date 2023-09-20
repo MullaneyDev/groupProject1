@@ -57,12 +57,33 @@ class Animal {
     });
   }
   statDecrease() {
-    newPet.health -= 2;
-    newPet.happiness -= 2;
-    newPet.hunger -= 2;
-    newPet.thirst -= 2;
-    newPet.environment -= 2;
-    newPet.stats();
+    this.health -= 2;
+    this.happiness -= 2;
+    this.hunger -= 2;
+    this.thirst -= 2;
+    this.environment -= 2;
+    this.stats();
+    if (this.health === 0) {
+        console.log(`${this.name} died from neglect`);
+      clearInterval(decrease);
+      return;
+    } else if (this.happiness === 90) {
+        console.log(`${this.name} gave up and died`);
+      clearInterval(decrease);
+      return;        
+    }else if (this.hunger === 0) {
+        console.log(`${this.name} starved to death`);
+      clearInterval(decrease);
+      return; 
+    }else if (this.thirst === 0) {
+        console.log(`${this.name} died of dehydration`);
+      clearInterval(decrease);
+      return;  
+    }else if (this.environment === 0) {
+        console.log(`${this.name} was killed by the environment`)
+      clearInterval(decrease);
+      return;  
+    } 
   }
 }
 
@@ -140,7 +161,7 @@ class Unicorn extends Animal {
     this.thirst -= 10;
     return this;
   }
-  relaxInShade() {
+  giveBrush() {
     this.health += 10;
     this.happiness += 10;
     this.environment += 10;
@@ -148,4 +169,7 @@ class Unicorn extends Animal {
 }
 
 const newPet = new Dinosaur("Dino");
-setInterval(newPet.statDecrease, 1000);
+
+
+const decrease = setInterval(()=>newPet.statDecrease(), 1000);
+
