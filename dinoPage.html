@@ -3,10 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tamogotchi</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <h1>Dinosaur Tamogotchi</h1>
+    <div class="statbars">
+      <label for="health">Health:</label>
+
+      <meter
+        id="health"
+        min="0"
+        max="100"
+        low="33"
+        high="66"
+        optimum="80"
+        value="50"
+      ></meter>
+
+      <label for="hunger">Hunger:</label>
+
+      <meter
+        id="hunger"
+        min="0"
+        max="100"
+        low="33"
+        high="66"
+        optimum="80"
+        value="50"
+      ></meter>
+
+      <label for="thirst">Thirst:</label>
+
+      <meter
+        id="thirst"
+        min="0"
+        max="100"
+        low="33"
+        high="66"
+        optimum="80"
+        value="50"
+      ></meter>
+
+      <label for="happiness">Happiness:</label>
+
+      <meter
+        id="happiness"
+        min="0"
+        max="100"
+        low="33"
+        high="66"
+        optimum="80"
+        value="50"
+      ></meter>
+
+      <label for="environment">Environment:</label>
+
+      <meter
+        id="environment"
+        min="0"
+        max="100"
+        low="33"
+        high="66"
+        optimum="80"
+        value="50"
+      ></meter>
+    </div>
+    <div class="gameBtns">
+      <button>Feed</button>
+      <button>Drink</button>
+      <button>Play Fetch</button>
+      <button>Relax in the Shade</button>
+      <button>Go for a run</button>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

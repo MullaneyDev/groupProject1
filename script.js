@@ -1,13 +1,23 @@
 let popup = document.getElementById("myPopup");
 let btn = document.getElementById("startButton");
 let pet = document.getElementById("petGenerator");
+let dino = document.getElementById("Dino");
+let octo = document.getElementById("Octo");
+let uni = document.getElementById("Uni");
 
 btn.onclick = function () {
   popup.style.display = "block";
 };
 
-pet.onclick = function () {
+pet.onclick = function display() {
   popup.style.display = "none";
+  if (dino.checked) {
+    window.open((href = "dinoPage.html"));
+  } else if (octo.checked) {
+    window.open((href = "octoPage.html"));
+  } else if (uni.checked) {
+    window.open((href = "uniPage.html"));
+  }
 };
 
 window.onclick = function (event) {
@@ -15,6 +25,7 @@ window.onclick = function (event) {
     popup.style.display = "none";
   }
 };
+
 class Animal {
   constructor(name) {
     this.name = name;
