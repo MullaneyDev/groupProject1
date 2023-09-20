@@ -28,7 +28,16 @@ class Animal {
       Environment: this.environment,
     });
   }
+  statDecrease() {
+    newPet.health -= 2;
+    newPet.happiness -= 2;
+    newPet.hunger -= 2;
+    newPet.thirst -= 2;
+    newPet.environment -= 2;
+    newPet.stats();
+  } 
 }
+
 
 class Dinosaur extends Animal {
   constructor(name) {
@@ -110,3 +119,6 @@ class Unicorn extends Animal {
     this.environment += 10;
   }
 }
+
+const newPet = new Dinosaur("Dino");
+setInterval(newPet.statDecrease, 1000);
