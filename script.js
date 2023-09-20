@@ -35,7 +35,7 @@ class Animal {
     this.thirst -= 2;
     this.environment -= 2;
     this.stats();
-    setInterval(statDecrease, 1000);
+    setInterval(this.statDecrease(), 1000)
   }
 }
 
@@ -122,13 +122,13 @@ class Unicorn extends Animal {
 
 const dino = new Dinosaur("Dino");
 
-const statDecrease = () => {
-  this.health -= 2;
-  this.happiness -= 2;
-  this.hunger -= 2;
-  this.thirst -= 2;
-  this.environment -= 2;
-  dino.stats();
-};
+// const statDecrease = () => {    Copied into the Animal class
+//   this.health -= 2;
+//   this.happiness -= 2;
+//   this.hunger -= 2;
+//   this.thirst -= 2;
+//   this.environment -= 2;
+//   dino.stats();
+// };
 
-setInterval(statDecrease, 1000);
+// setInterval(statDecrease, 1000);
