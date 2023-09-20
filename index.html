@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
-
-    
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Tamogotchi Simulator</h1>
+    <h3>Click below to begin!</h3>
+    <button id="startButton">Tamogotchi Time</button>
+    <div id="myPopup" class="popup">
+      <div class="popupContent">
+        <h1>Choose your Tamogotchi</h1>
+        <form action="" method="get">
+          <p>Please choose your pet species:</p>
+          <input
+            type="radio"
+            id="Dino"
+            name="petChoice"
+            value="dinoPage.html"
+          />
+          <label for="Dino">Dinosaur</label><br />
+          <input
+            type="radio"
+            id="Octo"
+            name="petChoice"
+            value="octoPage.html"
+          />
+          <label for="Octo">Octopus</label><br />
+          <input type="radio" id="Uni" name="petChoice" value="uniPage.html" />
+          <label for="Uni">Unicorn</label><br />
+          <button id="petGenerator">Start</button>
+        </form>
+      </div>
+    </div>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
