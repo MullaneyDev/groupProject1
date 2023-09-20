@@ -29,15 +29,15 @@ class Animal {
     });
   }
   statDecrease() {
-    this.health -= 2;
-    this.happiness -= 2;
-    this.hunger -= 2;
-    this.thirst -= 2;
-    this.environment -= 2;
-    this.stats();
-    setInterval(this.statDecrease(), 1000)
-  }
+    newPet.health -= 2;
+    newPet.happiness -= 2;
+    newPet.hunger -= 2;
+    newPet.thirst -= 2;
+    newPet.environment -= 2;
+    newPet.stats();
+  } 
 }
+
 
 class Dinosaur extends Animal {
   constructor(name) {
@@ -120,15 +120,5 @@ class Unicorn extends Animal {
   }
 }
 
-const dino = new Dinosaur("Dino");
-
-// const statDecrease = () => {    Copied into the Animal class
-//   this.health -= 2;
-//   this.happiness -= 2;
-//   this.hunger -= 2;
-//   this.thirst -= 2;
-//   this.environment -= 2;
-//   dino.stats();
-// };
-
-// setInterval(statDecrease, 1000);
+const newPet = new Dinosaur("Dino");
+setInterval(newPet.statDecrease, 1000);
