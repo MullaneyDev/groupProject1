@@ -207,8 +207,6 @@ class Unicorn extends Animal {
 }
 
 
-const decrease = setInterval(() => newPet.statDecrease(), 1000);
-
 const newDino = () => {
   const newPet = new Dinosaur("Dino");
   // animal (class) event listeners
