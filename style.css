@@ -49,3 +49,20 @@
 h1 {
   text-align: center;
 }
+
+h3 {
+  text-align: center;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#homeBtn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
