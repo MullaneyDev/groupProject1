@@ -6,17 +6,60 @@ let octo = document.getElementById("Octo");
 let uni = document.getElementById("Uni");
 
 // Activity buttons links
-const feed = document.getElementById("feed")
-const drink = document.getElementById("drink")
-const fetch = document.getElementById("fetch")
-const relaxShade = document.getElementById("relaxShade")
-const goRun = document.getElementById("goRun")
-const swim = document.getElementById("swim")
-const splash = document.getElementById("splash")
-const hideSeek = document.getElementById("hideSeek")
-const ride = document.getElementById("ride")
-const brush = document.getElementById("brush")
-const wish = document.getElementById("wish")
+const feed = document.getElementById("feed");
+const drink = document.getElementById("drink");
+const dinoFetch = document.getElementById("fetch");
+const relaxShade = document.getElementById("relaxShade");
+const goRun = document.getElementById("goRun");
+const swim = document.getElementById("swim");
+const splash = document.getElementById("splash");
+const hideSeek = document.getElementById("hideSeek");
+const ride = document.getElementById("ride");
+const brush = document.getElementById("brush");
+const wish = document.getElementById("wish");
+
+// animal (class) event listeners
+feed.addEventListener("click", () => {
+  eats();
+});
+drink.addEventListener("click", () => {
+  drinks();
+});
+
+// dinosaur (sub-class) event listeners
+dinoFetch.addEventListener("click", () => {
+  playFetch();
+});
+relaxShade.addEventListener("click", () => {
+  relaxInShade();
+});
+
+// octopus (sub-class) event listeners
+goRun.addEventListener("click", () => {
+  goForRun();
+});
+swim.addEventListener("click", () => {
+  goForSwim();
+});
+splash.addEventListener("click", () => {
+  coverInWater();
+});
+hideSeek.addEventListener("click", () => {
+  playHideAndSeek();
+});
+
+// unicorn (sub-class) event listeners
+ride.addEventListener("click", () => {
+  goForRide();
+});
+brush.addEventListener("click", () => {
+  giveBrush();
+});
+wish.addEventListener("click", () => {
+  grantWish();
+});
+
+
 
 btn.onclick = function () {
   popup.style.display = "block";
@@ -77,26 +120,26 @@ class Animal {
     this.environment -= 2;
     this.stats();
     if (this.health === 0) {
-        console.log(`${this.name} died from neglect`);
+      console.log(`${this.name} died from neglect`);
       clearInterval(decrease);
       return;
     } else if (this.happiness === 90) {
-        console.log(`${this.name} gave up and died`);
+      console.log(`${this.name} gave up and died`);
       clearInterval(decrease);
-      return;        
-    }else if (this.hunger === 0) {
-        console.log(`${this.name} starved to death`);
+      return;
+    } else if (this.hunger === 0) {
+      console.log(`${this.name} starved to death`);
       clearInterval(decrease);
-      return; 
-    }else if (this.thirst === 0) {
-        console.log(`${this.name} died of dehydration`);
+      return;
+    } else if (this.thirst === 0) {
+      console.log(`${this.name} died of dehydration`);
       clearInterval(decrease);
-      return;  
-    }else if (this.environment === 0) {
-        console.log(`${this.name} was killed by the environment`)
+      return;
+    } else if (this.environment === 0) {
+      console.log(`${this.name} was killed by the environment`);
       clearInterval(decrease);
-      return;  
-    } 
+      return;
+    }
   }
 }
 
@@ -183,6 +226,4 @@ class Unicorn extends Animal {
 
 const newPet = new Dinosaur("Dino");
 
-
-const decrease = setInterval(()=>newPet.statDecrease(), 1000);
-
+const decrease = setInterval(() => newPet.statDecrease(), 1000);
