@@ -5,6 +5,19 @@ let dino = document.getElementById("Dino");
 let octo = document.getElementById("Octo");
 let uni = document.getElementById("Uni");
 
+// Activity buttons links
+const feed = document.getElementById("feed")
+const drink = document.getElementById("drink")
+const fetch = document.getElementById("fetch")
+const relaxShade = document.getElementById("relaxShade")
+const goRun = document.getElementById("goRun")
+const swim = document.getElementById("swim")
+const splash = document.getElementById("splash")
+const hideSeek = document.getElementById("hideSeek")
+const ride = document.getElementById("ride")
+const brush = document.getElementById("brush")
+const wish = document.getElementById("wish")
+
 btn.onclick = function () {
   popup.style.display = "block";
 };
