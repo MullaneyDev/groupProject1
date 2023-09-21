@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
+
+* {
+  font-family: "Caprasimo";
+}
+
 .popup {
   position: fixed;
   z-index: 1;
@@ -12,11 +18,15 @@
 }
 
 .popupContent {
-  background-color: #fefefe;
+  background-color: #add8e6;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  text-align: center;
+  border-radius: 5%;
+  color: ivory;
+  text-shadow: 2px 2px black;
 }
 
 #petGenerator {
@@ -36,22 +46,76 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 30px;
 }
 
 .gameBtns {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   padding: 5px;
   margin: 5px;
 }
 
+.gameBtns > button {
+  align-self: center;
+}
+
 h1 {
   text-align: center;
+  font-size: 75px;
+}
+
+.mainHeader {
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  text-shadow: 2px 2px deeppink;
+  color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.dinoHeader {
+  border-radius: 50%;
+  background-color: darkseagreen;
+  text-shadow: 2px 2px greenyellow;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.octoHeader {
+  border-radius: 50%;
+  background-color: coral;
+  text-shadow: 2px 2px red;
+  color: firebrick;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.uniHeader {
+  border-radius: 50%;
+  background-color: darkmagenta;
+  text-shadow: 2px 2px red;
+  color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
 }
 
 h3 {
   text-align: center;
+  font-size: 50px;
 }
 
 .btnBox {
@@ -65,4 +129,9 @@ h3 {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+button {
+  font-size: 25px;
+  border-radius: 5px;
 }
