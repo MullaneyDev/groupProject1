@@ -4,6 +4,7 @@ let pet = document.getElementById("petGenerator");
 let dino = document.getElementById("Dino");
 let octo = document.getElementById("Octo");
 let uni = document.getElementById("Uni");
+// let homeBtn = document.getElementById("homeBtn");
 
 //statBars
 
@@ -27,50 +28,16 @@ const ride = document.getElementById("ride");
 const brush = document.getElementById("brush");
 const wish = document.getElementById("wish");
 
-// animal (class) event listeners
-feed.addEventListener("click", () => {
-  eats();
-});
-drink.addEventListener("click", () => {
-  drinks();
-});
-
-// dinosaur (sub-class) event listeners
-dinoFetch.addEventListener("click", () => {
-  playFetch();
-});
-relaxShade.addEventListener("click", () => {
-  relaxInShade();
-});
-
-// octopus (sub-class) event listeners
-goRun.addEventListener("click", () => {
-  goForRun();
-});
-swim.addEventListener("click", () => {
-  goForSwim();
-});
-splash.addEventListener("click", () => {
-  coverInWater();
-});
-hideSeek.addEventListener("click", () => {
-  playHideAndSeek();
-});
-
-// unicorn (sub-class) event listeners
-ride.addEventListener("click", () => {
-  goForRide();
-});
-brush.addEventListener("click", () => {
-  giveBrush();
-});
-wish.addEventListener("click", () => {
-  grantWish();
-});
-
-btn.onclick = function () {
+btn.addEventListener("click", () => {
   popup.style.display = "block";
-};
+});
+
+
+// homeBtn.addEventListener("click", () => {
+//   console.log("test")
+//   window.open((href = "index.html"));
+// });
+
 
 pet.onclick = function display() {
   popup.style.display = "none";
@@ -99,6 +66,7 @@ class Animal {
     this.environment = 100;
   }
   drinks() {
+    console.log("drinks");
     this.health += 5;
     this.thirst += 10;
     return this;
@@ -238,7 +206,79 @@ class Unicorn extends Animal {
   }
 }
 
-const newPet = new Dinosaur("Dino");
+
+const decrease = setInterval(() => newPet.statDecrease(), 1000);
+
+const newDino = () => {
+  const newPet = new Dinosaur("Dino");
+  // animal (class) event listeners
+  feed.addEventListener("click", () => {
+    newPet.eats();
+  });
+  drink.addEventListener("click", () => {
+    newPet.drinks();
+  });
+
+  // dinosaur (sub-class) event listeners
+  dinoFetch.addEventListener("click", () => {
+    newPet.playFetch();
+  });
+  relaxShade.addEventListener("click", () => {
+    newPet.relaxInShade();
+  });
+};
+const newOcto = () => {
+  const newPet = new Octopus("Octy");
+
+  // animal (class) event listeners
+  feed.addEventListener("click", () => {
+    newPet.eats();
+  });
+  drink.addEventListener("click", () => {
+    newPet.drinks();
+  });
+
+  // octopus (sub-class) event listeners
+  goRun.addEventListener("click", () => {
+    newPet.goForRun();
+  });
+  swim.addEventListener("click", () => {
+    newPet.goForSwim();
+  });
+  splash.addEventListener("click", () => {
+    newPet.coverInWater();
+  });
+  hideSeek.addEventListener("click", () => {
+    newPet.playHideAndSeek();
+  });
+};
+
+const newUnicorn = () => {
+  const newPet = new Unicorn("Uni");
+  // animal (class) event listeners
+  feed.addEventListener("click", () => {
+    newPet.eats();
+  });
+  drink.addEventListener("click", () => {
+    newPet.drinks();
+  });
+
+  // unicorn (sub-class) event listeners
+  ride.addEventListener("click", () => {
+    newPet.goForRide();
+  });
+  brush.addEventListener("click", () => {
+    newPet.giveBrush();
+  });
+  wish.addEventListener("click", () => {
+    newPet.grantWish();
+  });
+};
+
+//newDino();
+
+//const newPet = new Dinosaur("Dino");
 
 const updateStatsInterval = setInterval(() => newPet.updateStats(), 1);
 const decrease = setInterval(() => newPet.statDecrease(), 1000);
+
