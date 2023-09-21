@@ -5,6 +5,14 @@ let dino = document.getElementById("Dino");
 let octo = document.getElementById("Octo");
 let uni = document.getElementById("Uni");
 
+//statBars
+
+let healthStat = document.getElementById("health")
+let hungerStat = document.getElementById("hunger")
+let thirstStat = document.getElementById("thirst")
+let happinessStat = document.getElementById("happiness")
+let environmentStat = document.getElementById("environment")
+
 // Activity buttons links
 const feed = document.getElementById("feed");
 const drink = document.getElementById("drink");
@@ -226,4 +234,6 @@ class Unicorn extends Animal {
 
 const newPet = new Dinosaur("Dino");
 
-const decrease = setInterval(() => newPet.statDecrease(), 1000);
+const updateStats = setInterval(,1)
+const decrease = setInterval(()=>newPet.statDecrease(), 1000);
+
