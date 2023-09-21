@@ -13,6 +13,14 @@ let thirstStat = document.getElementById("thirst")
 let happinessStat = document.getElementById("happiness")
 let environmentStat = document.getElementById("environment")
 
+//statBars
+
+let healthStat = document.getElementById("health");
+let hungerStat = document.getElementById("hunger");
+let thirstStat = document.getElementById("thirst");
+let happinessStat = document.getElementById("happiness");
+let environmentStat = document.getElementById("environment");
+
 // Activity buttons links
 const feed = document.getElementById("feed");
 const drink = document.getElementById("drink");
@@ -67,8 +75,6 @@ wish.addEventListener("click", () => {
   grantWish();
 });
 
-
-
 btn.onclick = function () {
   popup.style.display = "block";
 };
@@ -119,6 +125,13 @@ class Animal {
       Happiness: this.happiness,
       Environment: this.environment,
     });
+  }
+  updateStats() {
+    healthStat.value = this.health;
+    hungerStat.value = this.hunger;
+    thirstStat.value = this.thirst;
+    happinessStat.value = this.happiness;
+    environmentStat.value = this.environment;
   }
   statDecrease() {
     this.health -= 2;
@@ -234,6 +247,5 @@ class Unicorn extends Animal {
 
 const newPet = new Dinosaur("Dino");
 
-const updateStats = setInterval(,1)
-const decrease = setInterval(()=>newPet.statDecrease(), 1000);
-
+const updateStatsInterval = setInterval(() => newPet.updateStats(), 1);
+const decrease = setInterval(() => newPet.statDecrease(), 1000);
