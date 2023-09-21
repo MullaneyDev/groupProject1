@@ -9,14 +9,17 @@ class Animal {
     this.environment = 100;
   }
   drinks() {
-    this.health + 5 > 100 ? 100 : this.health + 5;
-    this.thirst + 10 > 100 ? 100 : this.thirst + 5;
+    this.health + 5 > 100 ? 100 : (this.health += 5);
+    this.thirst + 10 > 100 ? 100 : (this.thirst += 5);
+    console.log(this.health, this.thirst);
+
     return this;
   }
   eats() {
-    this.health + 5 > 100 ? 100 : this.health + 5;
-    this.hunger + 10 > 100 ? 100 : this.health + 10;
-    this.thirst + 5 > 100 ? 100 : this.thirst + 5;
+    this.health + 5 > 100 ? 100 : (this.health += 5);
+    this.hunger + 10 > 100 ? 100 : (this.health += 10);
+    this.thirst + 5 > 100 ? 100 : (this.thirst += 5);
+    console.log(this.health, this.hunger, this.thirst);
     return this;
   }
   stats() {
@@ -35,7 +38,7 @@ class Animal {
     this.hunger -= 2;
     this.thirst -= 2;
     this.environment -= 2;
-    this.stats();
+    //this.stats();
     if (this.health === 0) {
       console.log(`${this.name} died from neglect`);
       clearInterval(this.decrease);
