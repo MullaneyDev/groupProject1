@@ -48,7 +48,6 @@ class Animal {
 
   endGame() {
     // get current time
-    clearInterval(this.decrease);
     clearInterval(this.showTimer);
     for (let i = 0; i < this.activityButtons.length; i++) {
       this.activityButtons[i].disabled = true;
@@ -75,22 +74,27 @@ class Animal {
     this.environment -= 2;
     if (this.health === 0) {
       message.innerText = `${this.name} died from neglect`;
+      clearInterval(this.decrease);
       this.endGame();
       return;
     } else if (this.happiness === 0) {
       message.innerText = `${this.name} gave up and died`;
+      clearInterval(this.decrease);
       this.endGame();
       return;
     } else if (this.hunger === 0) {
       message.innerText = `${this.name} starved to death`;
+      clearInterval(this.decrease);
       this.endGame();
       return;
     } else if (this.thirst === 0) {
       deathMessage.innerText = `${this.name} died of dehydration`;
+      clearInterval(this.decrease);
       this.endGame();
       return;
     } else if (this.environment === 0) {
       deathMessage.innerText = `${this.name} was killed by the environment`;
+      clearInterval(this.decrease);
       this.endGame();
       return;
     }
