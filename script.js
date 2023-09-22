@@ -9,7 +9,6 @@ const uni = document.getElementById("Uni");
 
 let myPetsName = "";
 
-// let homeBtn = document.getElementById("homeBtn");
 
 btn.addEventListener("click", () => {
   popup.style.display = "block";
@@ -20,17 +19,14 @@ pet.onclick = function display(event) {
   popup.style.display = "none";
   myPetsName = petName.value;
   if (dino.checked) {
-    window.location.href = `dinoPage.html?petName=${myPetsName}`;
-    //((href = "dinoPage.html"));
-    // console.log("myPetsName: ", myPetsName);
+    window.location.href = `dinoPage.html?${myPetsName}`;
+
   } else if (octo.checked) {
-    window.location.href = `octoPage.html?petName=${myPetsName}`;
+    window.location.href = `octoPage.html?${myPetsName}`;
 
-    //window.open((href = "octoPage.html"));
   } else if (uni.checked) {
-    window.location.href = `uniPage.html?petName=${myPetsName}`;
+    window.location.href = `uniPage.html?${myPetsName}`;
 
-    //window.open((href = "uniPage.html"));
   }
 };
 
@@ -40,12 +36,3 @@ window.onclick = function (event) {
   }
 };
 
-//newDino();
-
-//const newPet = new Dinosaur("Dino");
-
-//module.exports = { Animal, Dinosaur, Octopus, Unicorn,myPetsName };
-
-//export default {  Dinosaur, Octopus, Unicorn, myPetsName };
-
-// module.exports={drinks, eats,stats,updateStats,statDecrease,playFetch,goForRun, relaxInShade,playHideAndSeek,goForSwim,coverInWater,goForRide,grantwish,giveBrush}

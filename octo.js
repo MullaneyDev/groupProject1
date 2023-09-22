@@ -28,7 +28,7 @@ homeBtn.addEventListener("click", () => {
   window.open((href = "index.html"));
 });
 
-const newPet = new Octopus("Octy");
+const newPet = new Octopus(`${urlParams}`);
 
 // animal (class) event listeners
 feed.addEventListener("click", () => {
