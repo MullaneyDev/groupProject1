@@ -14,6 +14,7 @@ const wish = document.getElementById("wish");
 class Animal {
   constructor(name) {
     this.decrease = setInterval(() => this.statDecrease(), 1000);
+    this.showTimer = setInterval(() => this.runTimer(), 100);
     this.name = name;
     this.health = 100;
     this.hunger = 100;
@@ -21,6 +22,7 @@ class Animal {
     this.happiness = 100;
     this.environment = 100;
     this.startTime = new Date().getTime();
+    this.currentRunningTime = 0;
   }
   drinks() {
     this.health + 5 > 100 ? 100 : (this.health += 5);
@@ -47,6 +49,7 @@ class Animal {
   endGame() {
     // get current time
     clearInterval(this.decrease);
+    clearInterval(this.showTimer);
     for (let i = 0; i < this.activityButtons.length; i++) {
       this.activityButtons[i].disabled = true;
     }
@@ -55,7 +58,16 @@ class Animal {
     // check if high score is exceeded
     if (timeInPlay > localStorage.getItem("highScore")) {
       localStorage.setItem("highScore", timeInPlay);
+      bestScore.textContent = localStorage.getItem("highScore");
     }
+  }
+
+  runTimer() {
+    this.currentRunningTime = (
+      (new Date().getTime() - this.startTime) /
+      60 /
+      60
+    ).toFixed(2);
   }
 
   statDecrease() {
@@ -120,13 +132,7 @@ export class Octopus extends Animal {
   constructor(name) {
     super(name);
     this.happy = "Spins";
-    this.activityButtons = [
-      feed,
-      drink,
-      swim,
-      splash,
-      hideSeek,
-    ];
+    this.activityButtons = [feed, drink, swim, splash, hideSeek];
   }
 
   playHideAndSeek() {
@@ -154,12 +160,7 @@ export class Unicorn extends Animal {
   constructor(name) {
     super(name);
     this.happy = "Horn glows";
-    this. activityButtons = [
-      feed,drink,
-      ride,
-      brush,
-      wish,
-    ];
+    this.activityButtons = [feed, drink, ride, brush, wish];
   }
 
   goForRide() {

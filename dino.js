@@ -13,6 +13,7 @@ const updateStats = () => {
   thirstStat.value = newPet.thirst;
   happinessStat.value = newPet.happiness;
   environmentStat.value = newPet.environment;
+  timePlaying.textContent = newPet.currentRunningTime;
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -48,7 +49,7 @@ goRun.addEventListener("click", () => {
   newPet.goForRun();
 });
 
-const updateStatsInterval = setInterval(() => updateStats(), 100);
+setInterval(() => updateStats(), 100);
 
 let imageContainer = document.getElementById("imageContainer");
 let images = document.getElementsByTagName("img");
