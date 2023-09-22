@@ -16,7 +16,6 @@ const updateStats = () => {
 };
 
 const urlParams = new URLSearchParams(window.location.search);
-console.log("urlParams: ", urlParams.get("petName"));
 
 // Activity buttons links
 const feed = document.getElementById("feed");
@@ -40,9 +39,6 @@ drink.addEventListener("click", () => {
 });
 
 // octopus (sub-class) event listeners
-goRun.addEventListener("click", () => {
-  newPet.goForRun();
-});
 swim.addEventListener("click", () => {
   newPet.goForSwim();
 });

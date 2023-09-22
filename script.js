@@ -7,7 +7,7 @@ const dino = document.getElementById("Dino");
 const octo = document.getElementById("Octo");
 const uni = document.getElementById("Uni");
 
- let myPetsName = "";
+let myPetsName = "";
 
 // let homeBtn = document.getElementById("homeBtn");
 
@@ -18,16 +18,19 @@ btn.addEventListener("click", () => {
 pet.onclick = function display(event) {
   event.preventDefault();
   popup.style.display = "none";
+  myPetsName = petName.value;
   if (dino.checked) {
-    myPetsName = petName.value;
-
     window.location.href = `dinoPage.html?petName=${myPetsName}`;
     //((href = "dinoPage.html"));
     // console.log("myPetsName: ", myPetsName);
   } else if (octo.checked) {
-    window.open((href = "octoPage.html"));
+    window.location.href = `octoPage.html?petName=${myPetsName}`;
+
+    //window.open((href = "octoPage.html"));
   } else if (uni.checked) {
-    window.open((href = "uniPage.html"));
+    window.location.href = `uniPage.html?petName=${myPetsName}`;
+
+    //window.open((href = "uniPage.html"));
   }
 };
 
@@ -36,8 +39,6 @@ window.onclick = function (event) {
     popup.style.display = "none";
   }
 };
-
-
 
 //newDino();
 
