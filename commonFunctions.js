@@ -10,19 +10,6 @@ const hideSeek = document.getElementById("hideSeek");
 const ride = document.getElementById("ride");
 const brush = document.getElementById("brush");
 const wish = document.getElementById("wish");
-const activityButtons = [
-  feed,
-  drink,
-  dinoFetch,
-  relaxShade,
-  goRun,
-  swim,
-  splash,
-  hideSeek,
-  ride,
-  brush,
-  wish,
-];
 
 class Animal {
   constructor(name) {
@@ -33,6 +20,7 @@ class Animal {
     this.thirst = 100;
     this.happiness = 100;
     this.environment = 100;
+    this.startTime = new Date().getTime();
   }
   drinks() {
     this.health + 5 > 100 ? 100 : (this.health += 5);
@@ -55,46 +43,46 @@ class Animal {
       Environment: this.environment,
     });
   }
+
+  endGame() {
+    // get current time
+    clearInterval(this.decrease);
+    for (let i = 0; i < this.activityButtons.length; i++) {
+      this.activityButtons[i].disabled = true;
+    }
+    let endTime = new Date().getTime();
+    let timeInPlay = ((endTime - this.startTime) / 60 / 60).toFixed(2);
+    // check if high score is exceeded
+    if (timeInPlay > localStorage.getItem("highScore")) {
+      localStorage.setItem("highScore", timeInPlay);
+    }
+  }
+
   statDecrease() {
     this.health -= 2;
     this.happiness -= 2;
     this.hunger -= 2;
     this.thirst -= 2;
     this.environment -= 2;
-    if (this.health === 0) {
+    if (this.health === 90) {
       message.innerText = `${this.name} died from neglect`;
-      clearInterval(this.decrease);
-      for (let i = 0; i < activityButtons.length; i++) {
-        activityButtons[i].disabled = true;
-      }
+      this.endGame();
       return;
     } else if (this.happiness === 0) {
       message.innerText = `${this.name} gave up and died`;
-      clearInterval(this.decrease);
-      for (let i = 0; i < activityButtons.length; i++) {
-        activityButtons[i].disabled = true;
-      }
+      this.endGame();
       return;
     } else if (this.hunger === 0) {
       message.innerText = `${this.name} starved to death`;
-      clearInterval(this.decrease);
-      for (let i = 0; i < activityButtons.length; i++) {
-        activityButtons[i].disabled = true;
-      }
+      this.endGame();
       return;
     } else if (this.thirst === 0) {
       deathMessage.innerText = `${this.name} died of dehydration`;
-      clearInterval(this.decrease);
-      for (let i = 0; i < activityButtons.length; i++) {
-        activityButtons[i].disabled = true;
-      }
+      this.endGame();
       return;
     } else if (this.environment === 0) {
       deathMessage.innerText = `${this.name} was killed by the environment`;
-      clearInterval(this.decrease);
-      for (let i = 0; i < activityButtons.length; i++) {
-        activityButtons[i].disabled = true;
-      }
+      this.endGame();
       return;
     }
   }
@@ -104,6 +92,7 @@ export class Dinosaur extends Animal {
   constructor(name) {
     super(name);
     this.happy = "Roar";
+    this.activityButtons = [feed, drink, dinoFetch, relaxShade, goRun];
   }
 
   playFetch() {
@@ -131,6 +120,13 @@ export class Octopus extends Animal {
   constructor(name) {
     super(name);
     this.happy = "Spins";
+    this.activityButtons = [
+      feed,
+      drink,
+      swim,
+      splash,
+      hideSeek,
+    ];
   }
 
   playHideAndSeek() {
@@ -158,6 +154,12 @@ export class Unicorn extends Animal {
   constructor(name) {
     super(name);
     this.happy = "Horn glows";
+    this. activityButtons = [
+      feed,drink,
+      ride,
+      brush,
+      wish,
+    ];
   }
 
   goForRide() {
