@@ -73,7 +73,7 @@ class Animal {
     this.hunger -= 2;
     this.thirst -= 2;
     this.environment -= 2;
-    if (this.health === 90) {
+    if (this.health === 0) {
       message.innerText = `${this.name} died from neglect`;
       this.endGame();
       return;
