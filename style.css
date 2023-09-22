@@ -4,6 +4,32 @@
   font-family: "Caprasimo";
 }
 
+body {
+  margin: 0;
+}
+
+.indexBody {
+  background-image: url("./animalImages/indexBackground.jpeg");
+}
+
+.dinoBody {
+  background-image: url("./animalImages/dinoBackground.jpeg");
+}
+
+.octoBody {
+  background-image: url("./animalImages/octoBackground.jpeg");
+}
+
+.uniBody {
+  background-image: url("./animalImages/uniBackground.jpeg");
+  background-size: cover;
+}
+
+#clickInst {
+  color: white;
+  text-shadow: 5px 5px black;
+}
+
 .popup {
   position: fixed;
   z-index: 1;
@@ -68,6 +94,8 @@ h1 {
 .mainHeader {
   border-radius: 50%;
   background-color: cornflowerblue;
+  border: 5px black;
+  border-style: solid;
   text-shadow: 2px 2px deeppink;
   color: pink;
   display: flex;
@@ -136,17 +164,98 @@ button {
   border-radius: 5px;
 }
 
-.imageContainer {
-  width: 300px;
-  height: 200px;
+.dinoScoreKeeper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkseagreen;
+  border-radius: 50%;
+  border: greenyellow 5px;
+  border-style: dashed;
+  text-shadow: 2px 2px greenyellow;
+  color: green;
+}
+
+.octoScoreKeeper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: coral;
+  border-radius: 50%;
+  border: red 5px;
+  border-style: dashed;
+  text-shadow: 2px 2px red;
+  color: firebrick;
+}
+
+.uniScoreKeeper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkmagenta;
+  border-radius: 50%;
+  border: red 5px;
+  border-style: dashed;
+  text-shadow: 2px 2px red;
+  color: pink;
+}
+
+.dinoImageContainer {
+  width: 100vw;
+  height: 250px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: none;
 }
 
-img {
-  max-width: 50%;
-  height: auto;
+.dinoImageContainer > img {
+  width: 400px;
   display: none;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px black;
+  border-style: solid;
+}
+
+.octoImageContainer {
+  width: 100vw;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.octoImageContainer > img {
+  width: 150px;
+  display: none;
+  background-color: white;
+  border-radius: 25%;
+  border: 2px black;
+  border-style: solid;
+}
+
+.uniImageContainer {
+  width: 100vw;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.uniImageContainer > img {
+  width: 150px;
+  display: none;
+  background-color: white;
+  border-radius: 25%;
+  border: 2px black;
+  border-style: solid;
 }

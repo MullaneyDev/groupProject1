@@ -6,7 +6,7 @@
     <title>Tamogotchi</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="uniBody">
     <div class="uniHeader"><h1>Unicorn Tamagotchi</h1></div>
     <br />
     <div class="statbars">
@@ -72,7 +72,7 @@
     </div>
     <br />
 
-    <div class="imageContainer">
+    <div class="uniImageContainer">
       <img src="./animalImages/uniIdle1.png" alt="image 1" />
       <img src="./animalImages/uniIdle2.png" alt="image 2" />
     </div>
@@ -87,8 +87,11 @@
     <div id="homeBtn">
       <button onclick="window.location.href='index.html'">Homepage</button>
     </div>
-    <section>
+    <br />
+    <section class="uniScoreKeeper">
       <h1 id="message"></h1>
+      <h2>Timer: <span id="timePlaying">0</span> seconds</h2>
+      <h2>Best Time: <span id="bestScore">10</span> seconds</h2>
     </section>
     <script type="module" src="./uni.js"></script>
   </body>
