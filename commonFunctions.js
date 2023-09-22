@@ -53,12 +53,9 @@ class Animal {
     for (let i = 0; i < this.activityButtons.length; i++) {
       this.activityButtons[i].disabled = true;
     }
-    let endTime = new Date().getTime();
-    let timeInPlay = ((endTime - this.startTime) / 60 / 60).toFixed(2);
-    // check if high score is exceeded
-    if (timeInPlay > localStorage.getItem("highScore")) {
-      localStorage.setItem("highScore", timeInPlay);
-      bestScore.textContent = localStorage.getItem("highScore");
+    if (this.currentRunningTime > localStorage.getItem("highScore")) {
+      localStorage.setItem("highScore", this.currentRunningTime);
+      bestScore.textContent = this.currentRunningTime;
     }
   }
 

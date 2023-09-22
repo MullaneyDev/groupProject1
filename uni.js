@@ -6,6 +6,8 @@ let hungerStat = document.getElementById("hunger");
 let thirstStat = document.getElementById("thirst");
 let happinessStat = document.getElementById("happiness");
 let environmentStat = document.getElementById("environment");
+const bestScore = document.getElementById("bestScore");
+bestScore.textContent = localStorage.getItem("highScore");
 
 const updateStats = () => {
   healthStat.value = newPet.health;
@@ -13,6 +15,7 @@ const updateStats = () => {
   thirstStat.value = newPet.thirst;
   happinessStat.value = newPet.happiness;
   environmentStat.value = newPet.environment;
+  timePlaying.textContent = newPet.currentRunningTime;
 };
 
 const urlParams = new URLSearchParams(window.location.search);
