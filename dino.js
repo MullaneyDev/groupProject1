@@ -31,7 +31,7 @@ homeBtn.addEventListener("click", () => {
   window.open((href = "index.html"));
 });
 
-const newPet = new Dinosaur("Dino");
+const newPet = new Dinosaur(urlParams);
 // animal (class) event listeners
 feed.addEventListener("click", () => {
   newPet.eats();

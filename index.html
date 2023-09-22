@@ -17,7 +17,10 @@
     <div id="myPopup" class="popup">
       <div class="popupContent">
         <h1>Choose your Tamagotchi</h1>
-        <form action="" method="get">
+        <form action="" method="get">          
+          <label for="petName">Please enter your pet's name:</label><br />
+          <input type="text" class="petName" />
+          <button class="petGenerator">Start</button>
           <p>Please choose your pet species:</p>
           <input
             type="radio"
@@ -36,12 +39,23 @@
           <input type="radio" id="Uni" name="petChoice" value="uniPage.html" />
           <label for="Uni">Unicorn</label><br />
           <br />
-          <label for="petName">Please enter your pet's name:</label><br />
-          <input type="text" id="petName" name="petName" />
-          <button id="petGenerator">Start</button>
         </form>
       </div>
     </div>
     <script type="module" src="./script.js"></script>
+    <script>
+      let input = document.querySelector(".petName");
+      let button = document.querySelector(".petGenerator");
+      button.disabled = true;
+      input.addEventListener("change", stateHandle);
+
+      function stateHandle() {
+        if (input.value === "") {
+          button.disabled = true;
+        } else {
+          button.disabled = false;
+        }
+      }
+    </script>
   </body>
 </html>

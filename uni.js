@@ -31,7 +31,7 @@ homeBtn.addEventListener("click", () => {
   window.open((href = "index.html"));
 });
 
-const newPet = new Unicorn(`${urlParams}`);
+const newPet = new Unicorn(urlParams);
 // animal (class) event listeners
 feed.addEventListener("click", () => {
   newPet.eats();

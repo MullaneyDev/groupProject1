@@ -1,13 +1,14 @@
 const popup = document.getElementById("myPopup");
 const btn = document.getElementById("startButton");
-const pet = document.getElementById("petGenerator");
-const petName = document.getElementById("petName");
+const pet = document.querySelector(".petGenerator");
+const petName = document.querySelector(".petName");
 
 const dino = document.getElementById("Dino");
 const octo = document.getElementById("Octo");
 const uni = document.getElementById("Uni");
 
 let myPetsName = "";
+
 localStorage.setItem("highScore", 0);
 
 btn.addEventListener("click", () => {
