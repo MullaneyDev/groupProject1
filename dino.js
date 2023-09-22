@@ -25,14 +25,11 @@ const dinoFetch = document.getElementById("fetch");
 const relaxShade = document.getElementById("relaxShade");
 const goRun = document.getElementById("goRun");
 
-const timePlaying = document.getElementById("timePlaying");
-const bestScore = document.getElementById("bestScore");
-bestScore.textContent = localStorage.getItem("highScore");
 homeBtn.addEventListener("click", () => {
   window.open((href = "index.html"));
 });
 
-const newPet = new Dinosaur(`${urlParams}`);
+const newPet = new Dinosaur("Dino");
 // animal (class) event listeners
 feed.addEventListener("click", () => {
   newPet.eats();

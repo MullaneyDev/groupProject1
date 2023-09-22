@@ -6,7 +6,7 @@
     <title>Tamogotchi</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="dinoBody">
     <div class="dinoHeader">
       <h1>Dinosaur Tamagotchi</h1>
     </div>
@@ -74,7 +74,7 @@
     </div>
     <br />
 
-    <div class="imageContainer">
+    <div class="dinoImageContainer">
       <img src="./animalImages/dinoIdle1.png" alt="image 1" />
       <img src="./animalImages/dinoIdle2.png" alt="image 2" />
     </div>
@@ -90,10 +90,11 @@
     <div id="homeBtn">
       <button onclick="window.location.href='index.html'">Homepage</button>
     </div>
-    <section>
+    <br />
+    <section class="dinoScoreKeeper">
       <h1 id="message"></h1>
       <h2>Timer: <span id="timePlaying">0</span> seconds</h2>
-      <h2 >Best Time: <span id="bestScore">10</span> seconds</h2>
+      <h2>Best Time: <span id="bestScore">10</span> seconds</h2>
     </section>
     <script type="module" src="./dino.js"></script>
   </body>
