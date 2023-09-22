@@ -135,3 +135,18 @@ button {
   font-size: 25px;
   border-radius: 5px;
 }
+
+.imageContainer {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+  display: none;
+}
