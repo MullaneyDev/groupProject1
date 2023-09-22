@@ -13,6 +13,11 @@ const updateStats = () => {
   thirstStat.value = newPet.thirst;
   happinessStat.value = newPet.happiness;
   environmentStat.value = newPet.environment;
+  timePlaying.textContent = (
+    (new Date().getTime() - newPet.startTime) /
+    60 /
+    60
+  ).toFixed(2);
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -24,6 +29,9 @@ const dinoFetch = document.getElementById("fetch");
 const relaxShade = document.getElementById("relaxShade");
 const goRun = document.getElementById("goRun");
 
+const timePlaying = document.getElementById("timePlaying");
+const bestScore = document.getElementById("bestScore");
+bestScore.textContent = localStorage.getItem("highScore");
 homeBtn.addEventListener("click", () => {
   window.open((href = "index.html"));
 });
